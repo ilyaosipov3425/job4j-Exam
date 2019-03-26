@@ -1,0 +1,103 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">Job4j Exam</string>
+    <string name="hello">Hello, Ilya Osipov</string>
+
+    <!-- The name of the RadioButtons -->
+    <string name="RadioButton1">RadioButton</string>
+    <string name="RadioButton2">RadioButton</string>
+    <string name="RadioButton3">RadioButton</string>
+    <string name="RadioButton4">RadioButton</string>
+
+    <!-- The name of the buttons -->
+    <string name="ButtonBack">Back</string>
+    <string name="ButtonNext">Next</string>
+
+    <!-- The array contains the name of the region -->
+    <string name="domain_prompt">Select region</string>
+    <string name="exp_date">Date of test</string>
+    <string-array name="domain_arrays">
+        <item>Select region</item>
+        <item>Moscow</item>
+        <item>SPb</item>
+    </string-array>
+
+    <!-- The array contains numbers for the date -->
+    <string name="date_prompt">Date</string>
+    <string name="exp_date1">Date of test</string>
+    <string-array name="date_arrays">
+        <item>Date</item>
+        <item>1</item>
+        <item>2</item>
+        <item>3</item>
+        <item>4</item>
+        <item>5</item>
+        <item>6</item>
+        <item>7</item>
+        <item>8</item>
+        <item>9</item>
+        <item>10</item>
+        <item>11</item>
+        <item>12</item>
+        <item>13</item>
+        <item>14</item>
+        <item>15</item>
+        <item>16</item>
+        <item>17</item>
+        <item>18</item>
+        <item>19</item>
+        <item>20</item>
+        <item>21</item>
+        <item>22</item>
+        <item>23</item>
+        <item>24</item>
+        <item>25</item>
+        <item>26</item>
+        <item>27</item>
+        <item>28</item>
+        <item>29</item>
+        <item>30</item>
+        <item>31</item>
+    </string-array>
+
+    <!-- The array contains the month to date -->
+    <string name="month_prompt">Month</string>
+    <string name="exp_date2">Date of test</string>
+    <string-array name="month_arrays">
+        <item>Month</item>
+        <item>January</item>
+        <item>February</item>
+        <item>March</item>
+        <item>April</item>
+        <item>May</item>
+        <item>June</item>
+        <item>July</item>
+        <item>August</item>
+        <item>September</item>
+        <item>October</item>
+        <item>November</item>
+        <item>December</item>
+    </string-array>
+
+    <!-- The array contains the years for the date -->
+    <string name="year_prompt">Year</string>
+    <string name="exp_date3">Date of test</string>
+    <string-array name="year_arrays">
+        <item>Year</item>
+        <item>2018</item>
+        <item>2019</item>
+        <item>2020</item>
+    </string-array>
+
+    <!-- The name of the rows in custom_layout -->
+    <string name="Date">Date</string>
+    <string name="City">City</string>
+    <string name="Name_object">Name object</string>
+    <string name="Street_house">Street and house</string>
+    <string name="Customer">Full name customer</string>
+    <string name="Air_temperature">Air temperature</string>
+    <string name="Air_humidity">Air humidity</string>
+    <string name="Air_pressure">Air pressure</string>
+    <string name="Report_number">Report number</string>
+
+</resources>

@@ -18,12 +18,13 @@
 
             <TextView
                 android:id="@+id/textView11"
+                style="@style/CustomerColorText"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
                 android:width="400dp"
-                android:text="Дата"
-                tools:text="Дата" />
+                android:text="@string/Date"
+                tools:text="@string/Date" />
 
             <Spinner
                 android:id="@+id/spinner4"
@@ -32,7 +33,7 @@
                 android:layout_weight="1"
                 android:entries="@array/date_arrays"
                 android:prompt="@string/date_prompt"
-                android:spinnerMode="dialog" />
+                android:spinnerMode="dropdown" />
 
             <Spinner
                 android:id="@+id/spinner3"
@@ -41,7 +42,7 @@
                 android:layout_weight="1"
                 android:entries="@array/month_arrays"
                 android:prompt="@string/month_prompt"
-                android:spinnerMode="dialog" />
+                android:spinnerMode="dropdown" />
 
             <Spinner
                 android:id="@+id/spinner5"
@@ -50,7 +51,7 @@
                 android:layout_weight="1"
                 android:entries="@array/year_arrays"
                 android:prompt="@string/year_prompt"
-                android:spinnerMode="dialog" />
+                android:spinnerMode="dropdown" />
         </LinearLayout>
 
         <LinearLayout
@@ -60,12 +61,13 @@
 
             <TextView
                 android:id="@+id/textView10"
+                style="@style/CustomerColorText"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
                 android:width="375dp"
-                android:text="Город"
-                tools:text="Город" />
+                android:text="@string/City"
+                tools:text="@string/City" />
 
             <Spinner
                 android:id="@+id/spinner2"
@@ -74,7 +76,7 @@
                 android:layout_weight="1"
                 android:entries="@array/domain_arrays"
                 android:prompt="@string/domain_prompt"
-                android:spinnerMode="dialog" />
+                android:spinnerMode="dropdown" />
         </LinearLayout>
 
         <LinearLayout
@@ -84,22 +86,24 @@
 
             <TextView
                 android:id="@+id/textView"
+                style="@style/CustomerColorText"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
                 android:width="175dp"
-                android:text="Имя объекта"
-                tools:text="Имя объекта" />
+                android:text="@string/Name_object"
+                tools:text="@string/Name_object" />
 
             <EditText
                 android:id="@+id/editText2"
+                style="@style/CustomerColorText"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
                 android:ems="10"
-                android:hint="Имя объекта"
+                android:hint="@string/Name_object"
                 android:inputType="textPersonName"
-                tools:text="Имя объекта" />
+                tools:text="@string/Name_object" />
 
         </LinearLayout>
 
@@ -110,22 +114,24 @@
 
             <TextView
                 android:id="@+id/textView3"
+                style="@style/CustomerColorText"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
                 android:width="175dp"
-                android:text="Улица и дом"
-                tools:text="Улица и дом" />
+                android:text="@string/Street_house"
+                tools:text="@string/Street_house" />
 
             <EditText
                 android:id="@+id/editText3"
+                style="@style/CustomerColorText"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
                 android:ems="10"
-                android:hint="Улица и дом"
+                android:hint="@string/Street_house"
                 android:inputType="textPersonName"
-                tools:text="Улица и дом" />
+                tools:text="@string/Street_house" />
         </LinearLayout>
 
         <LinearLayout
@@ -135,22 +141,24 @@
 
             <TextView
                 android:id="@+id/textView4"
+                style="@style/CustomerColorText"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
                 android:width="175dp"
-                android:text="ФИО заказчика"
-                tools:text="ФИО заказчика" />
+                android:text="@string/Customer"
+                tools:text="@string/Customer" />
 
             <EditText
                 android:id="@+id/editText4"
+                style="@style/CustomerColorText"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
                 android:ems="10"
-                android:hint="ФИО заказчика"
+                android:hint="@string/Customer"
                 android:inputType="textPersonName"
-                tools:text="ФИО заказчика" />
+                tools:text="@string/Customer" />
         </LinearLayout>
 
         <LinearLayout
@@ -160,22 +168,24 @@
 
             <TextView
                 android:id="@+id/textView5"
+                style="@style/CustomerColorText"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
                 android:width="175dp"
-                android:text="Температура воздуха"
-                tools:text="Температура воздуха" />
+                android:text="@string/Air_temperature"
+                tools:text="@string/Air_temperature" />
 
             <EditText
                 android:id="@+id/editText5"
+                style="@style/CustomerColorText"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
                 android:ems="10"
-                android:hint="Температура воздуха"
+                android:hint="@string/Air_temperature"
                 android:inputType="textPersonName"
-                tools:text="Температура воздуха" />
+                tools:text="@string/Air_temperature" />
         </LinearLayout>
 
         <LinearLayout
@@ -185,22 +195,24 @@
 
             <TextView
                 android:id="@+id/textView6"
+                style="@style/CustomerColorText"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
                 android:width="175dp"
-                android:text="Влажность воздуха"
-                tools:text="Влажность воздуха" />
+                android:text="@string/Air_humidity"
+                tools:text="@string/Air_humidity" />
 
             <EditText
                 android:id="@+id/editText6"
+                style="@style/CustomerColorText"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
                 android:ems="10"
-                android:hint="Влажность воздуха"
+                android:hint="@string/Air_humidity"
                 android:inputType="textPersonName"
-                tools:text="Влажность воздуха" />
+                tools:text="@string/Air_humidity" />
         </LinearLayout>
 
         <LinearLayout
@@ -210,22 +222,24 @@
 
             <TextView
                 android:id="@+id/textView7"
+                style="@style/CustomerColorText"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
                 android:width="175dp"
-                android:text="Атмосферное давление"
-                tools:text="Атмосферное давление" />
+                android:text="@string/Air_pressure"
+                tools:text="@string/Air_pressure" />
 
             <EditText
                 android:id="@+id/editText7"
+                style="@style/CustomerColorText"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
                 android:ems="10"
-                android:hint="Атмосферное давление"
+                android:hint="@string/Air_pressure"
                 android:inputType="textPersonName"
-                tools:text="Атмосферное давление" />
+                tools:text="@string/Air_pressure" />
         </LinearLayout>
 
         <LinearLayout
@@ -235,22 +249,24 @@
 
             <TextView
                 android:id="@+id/textView8"
+                style="@style/CustomerColorText"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
                 android:width="175dp"
-                android:text="Номер отчёта"
-                tools:text="Номер отчёта" />
+                android:text="@string/Report_number"
+                tools:text="@string/Report_number" />
 
             <EditText
                 android:id="@+id/editText8"
+                style="@style/CustomerColorText"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
                 android:ems="10"
-                android:hint="Номер отчета"
+                android:hint="@string/Report_number"
                 android:inputType="textPersonName"
-                tools:text="Номер отчёта" />
+                tools:text="@string/Report_number" />
         </LinearLayout>
 
         <LinearLayout
@@ -263,14 +279,14 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
-                android:text="Назад" />
+                android:text="@string/ButtonBack" />
 
             <Button
                 android:id="@+id/button4"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
-                android:text="Далее" />
+                android:text="@string/ButtonNext" />
         </LinearLayout>
 
     </LinearLayout>

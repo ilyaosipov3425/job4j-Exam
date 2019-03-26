@@ -6,38 +6,49 @@
     android:orientation="vertical">
 
     <TextView
+        style="@style/CustomText"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Hello, Ilya Osipov!" />
+        android:text="@string/hello"
+        android:textStyle="bold" />
 
     <RadioGroup
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:orientation="vertical" >
+        android:orientation="vertical">
 
         <RadioButton
             android:id="@+id/radioButton"
+            style="@style/CustomStyleRadioButton"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="RadioButton" />
+            android:text="@string/RadioButton1"
+            android:textAllCaps="false"
+            android:textStyle="italic" />
 
         <RadioButton
             android:id="@+id/radioButton2"
+            style="@style/CustomStyleRadioButton"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="RadioButton" />
+            android:text="@string/RadioButton2"
+            android:textStyle="italic" />
 
         <RadioButton
             android:id="@+id/radioButton3"
+            style="@style/CustomStyleRadioButton"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="RadioButton" />
+            android:text="@string/RadioButton3"
+            android:textStyle="italic" />
 
         <RadioButton
             android:id="@+id/radioButton4"
+            style="@style/CustomStyleRadioButton"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="RadioButton" />
+            android:text="@string/RadioButton4"
+            android:textStyle="italic" />
 
     </RadioGroup>
 
@@ -51,13 +62,15 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_weight="1"
-            android:text="Назад" />
+            android:text="@string/ButtonBack"
+            android:textSize="12sp" />
 
         <Button
             android:id="@+id/button2"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_weight="1"
-            android:text="Далее" />
+            android:text="@string/ButtonNext"
+            android:textSize="12sp" />
     </LinearLayout>
 </LinearLayout>
