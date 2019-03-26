@@ -8,4 +8,76 @@
         <item name="colorAccent">@color/colorAccent</item>
     </style>
 
+    <string name="domain_prompt">Выберите область</string>
+    <string name="exp_date">Дата проведения испытания</string>
+    <string-array name="domain_arrays">
+        <item>Выберите область</item>
+        <item>Московская</item>
+        <item>СПб</item>
+    </string-array>
+
+    <string name="date_prompt">Число</string>
+    <string name="exp_date1">Дата проведения испытания</string>
+    <string-array name="date_arrays">
+        <item>Число</item>
+        <item>1</item>
+        <item>2</item>
+        <item>3</item>
+        <item>4</item>
+        <item>5</item>
+        <item>6</item>
+        <item>7</item>
+        <item>8</item>
+        <item>9</item>
+        <item>10</item>
+        <item>11</item>
+        <item>12</item>
+        <item>13</item>
+        <item>14</item>
+        <item>15</item>
+        <item>16</item>
+        <item>17</item>
+        <item>18</item>
+        <item>19</item>
+        <item>20</item>
+        <item>21</item>
+        <item>22</item>
+        <item>23</item>
+        <item>24</item>
+        <item>25</item>
+        <item>26</item>
+        <item>27</item>
+        <item>28</item>
+        <item>29</item>
+        <item>30</item>
+        <item>31</item>
+    </string-array>
+
+    <string name="month_prompt">Месяц</string>
+    <string name="exp_date2">Дата проведения испытания</string>
+    <string-array name="month_arrays">
+        <item>Месяц</item>
+        <item>Январь</item>
+        <item>Февраль</item>
+        <item>Март</item>
+        <item>Апрель</item>
+        <item>Май</item>
+        <item>Июнь</item>
+        <item>Июль</item>
+        <item>Август</item>
+        <item>Сентябрь</item>
+        <item>Октябрь</item>
+        <item>Ноябрь</item>
+        <item>Декабрь</item>
+    </string-array>
+
+    <string name="year_prompt">Год</string>
+    <string name="exp_date3">Дата проведения испытания</string>
+    <string-array name="year_arrays">
+        <item>Год</item>
+        <item>2018</item>
+        <item>2019</item>
+        <item>2020</item>
+    </string-array>
+
 </resources>
