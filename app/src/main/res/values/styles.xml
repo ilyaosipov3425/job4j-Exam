@@ -11,7 +11,7 @@
 
     <!-- Style header -->
     <style name="CustomText">
-        <item name="android:textSize">30sp</item>
+        <item name="android:textSize">20sp</item>
         <item name="android:textColor">@color/textColor</item>
     </style>
 
@@ -22,7 +22,7 @@
 
     <!-- Style RadioButtons -->
     <style name="CustomStyleRadioButton">
-        <item name="android:textSize">20sp</item>
+        <item name="android:textSize">15sp</item>
         <item name="android:textColor">@color/textColor</item>
     </style>
 </resources>
