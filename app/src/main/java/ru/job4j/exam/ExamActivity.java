@@ -1,5 +1,6 @@
 package ru.job4j.exam;
 
+import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.Log;
@@ -22,6 +23,8 @@ import java.util.List;
  */
 
 public class ExamActivity extends AppCompatActivity {
+    public static final String HINT_FOR = "hint for";
+    public static final String ANSWER_FOR = "answer for";
     private static final String TAG = "ExamActivity";
     private List<Integer> answer = new ArrayList<>();
     private int count = 0;
@@ -42,7 +45,7 @@ public class ExamActivity extends AppCompatActivity {
         variants.setOnCheckedChangeListener(new RadioGroup.OnCheckedChangeListener() {
             @Override
             public void onCheckedChanged(RadioGroup group, int checkedId) {
-                next.setEnabled(checkedId != -1 && position != questions.size() - 1);
+                next.setEnabled(true);
                 previous.setEnabled(checkedId != 1 && position != 0);
             }
         });
@@ -54,8 +57,12 @@ public class ExamActivity extends AppCompatActivity {
                         answer.add(variants.getCheckedRadioButtonId());
                         showAnswer();
                         position++;
-                        fillForm();
                         variants.check(-1);
+                        if (position == questions.size()) {
+                            startActivity(new Intent(ExamActivity.this, ResultActivity.class));
+                        } else {
+                            fillForm();
+                        }
                     }
                 }
         );
@@ -69,6 +76,20 @@ public class ExamActivity extends AppCompatActivity {
                     }
                 }
         );
+
+        Button hint = findViewById(R.id.hint);
+        hint.setOnClickListener(
+                new View.OnClickListener() {
+                    @Override
+                    public void onClick(View view) {
+                        Intent intent = new Intent(ExamActivity.this, HintActivity.class);
+                        intent.putExtra(HINT_FOR, position);
+                        intent.putExtra(ANSWER_FOR, position);
+                        startActivity(intent);
+                    }
+                }
+        );
+
         Log.d(TAG, "onCreate");
     }
 

@@ -24,7 +24,7 @@
             style="@style/CustomStyleRadioButton"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="@string/RadioButton1"
+            android:text="@string/radioButton1"
             android:textAllCaps="false"
             android:textStyle="italic" />
 
@@ -33,7 +33,7 @@
             style="@style/CustomStyleRadioButton"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="@string/RadioButton2"
+            android:text="@string/radioButton2"
             android:textStyle="italic" />
 
         <RadioButton
@@ -41,7 +41,7 @@
             style="@style/CustomStyleRadioButton"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="@string/RadioButton3"
+            android:text="@string/radioButton3"
             android:textStyle="italic" />
 
         <RadioButton
@@ -49,7 +49,7 @@
             style="@style/CustomStyleRadioButton"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="@string/RadioButton4"
+            android:text="@string/radioButton4"
             android:textStyle="italic" />
 
     </RadioGroup>
@@ -64,7 +64,15 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_weight="1"
-            android:text="@string/ButtonBack"
+            android:text="@string/buttonBack"
+            android:textSize="12sp" />
+
+        <Button
+            android:id="@+id/hint"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="@string/buttonHint"
             android:textSize="12sp" />
 
         <Button
@@ -72,7 +80,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_weight="1"
-            android:text="@string/ButtonNext"
+            android:text="@string/buttonNext"
             android:textSize="12sp" />
     </LinearLayout>
 </LinearLayout>

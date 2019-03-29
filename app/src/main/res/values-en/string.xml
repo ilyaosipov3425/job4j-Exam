@@ -2,16 +2,23 @@
 <resources>
     <string name="app_name">Job4j Exam</string>
     <string name="hello">Hello, Ilya Osipov</string>
+    <string name="result">Your test result :</string>
+    <string name="firstResult">Answer</string>
+    <string name="secondResult">Answer</string>
+    <string name="thirdResult">Answer</string>
+    <string name="hint">Hint</string>
+    <string name="answer">Result</string>
 
     <!-- The name of the RadioButtons -->
-    <string name="RadioButton1">RadioButton</string>
-    <string name="RadioButton2">RadioButton</string>
-    <string name="RadioButton3">RadioButton</string>
-    <string name="RadioButton4">RadioButton</string>
+    <string name="radioButton1">RadioButton</string>
+    <string name="radioButton2">RadioButton</string>
+    <string name="radioButton3">RadioButton</string>
+    <string name="radioButton4">RadioButton</string>
 
     <!-- The name of the buttons -->
-    <string name="ButtonBack">Back</string>
-    <string name="ButtonNext">Next</string>
+    <string name="buttonBack">Back</string>
+    <string name="buttonNext">Next</string>
+    <string name="buttonHint">Hint</string>
 
     <!-- The array contains the name of the region -->
     <string name="domain_prompt">Select region</string>
@@ -90,14 +97,14 @@
     </string-array>
 
     <!-- The name of the rows in custom_layout -->
-    <string name="Date">Date</string>
-    <string name="City">City</string>
-    <string name="Name_object">Name object</string>
-    <string name="Street_house">Street and house</string>
-    <string name="Customer">Full name customer</string>
-    <string name="Air_temperature">Air temperature</string>
-    <string name="Air_humidity">Air humidity</string>
-    <string name="Air_pressure">Air pressure</string>
-    <string name="Report_number">Report number</string>
+    <string name="date">Date</string>
+    <string name="city">City</string>
+    <string name="name_object">Name object</string>
+    <string name="street_house">Street and house</string>
+    <string name="customer">Full name customer</string>
+    <string name="air_temperature">Air temperature</string>
+    <string name="air_humidity">Air humidity</string>
+    <string name="air_pressure">Air pressure</string>
+    <string name="report_number">Report number</string>
 
 </resources>
