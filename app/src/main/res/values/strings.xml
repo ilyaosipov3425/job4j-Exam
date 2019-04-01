@@ -2,9 +2,7 @@
     <string name="app_name">Job4j Exam</string>
     <string name="hello">Привет, Илья Осипов</string>
     <string name="result">Ваш результат теста :</string>
-    <string name="firstResult">Ответ</string>
-    <string name="secondResult">Ответ</string>
-    <string name="thirdResult">Ответ</string>
+    <string name="resultAnswer">Не верно</string>
     <string name="hint">Подсказка</string>
     <string name="answer">Результат</string>
 

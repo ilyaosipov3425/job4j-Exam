@@ -3,9 +3,7 @@
     <string name="app_name">Job4j Exam</string>
     <string name="hello">Hello, Ilya Osipov</string>
     <string name="result">Your test result :</string>
-    <string name="firstResult">Answer</string>
-    <string name="secondResult">Answer</string>
-    <string name="thirdResult">Answer</string>
+    <string name="resultAnswer">False</string>
     <string name="hint">Hint</string>
     <string name="answer">Result</string>
 

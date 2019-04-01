@@ -27,6 +27,7 @@ public class ExamActivity extends AppCompatActivity {
     public static final String ANSWER_FOR = "answer for";
     private static final String TAG = "ExamActivity";
     private List<Integer> answer = new ArrayList<>();
+    private int trueCount = 0;
     private int count = 0;
     private int position = 0;
 
@@ -35,10 +36,11 @@ public class ExamActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_exam);
         this.fillForm();
-
         final Button next = findViewById(R.id.next);
         final Button previous = findViewById(R.id.previous);
+        final Button hint = findViewById(R.id.hint);
         final RadioGroup variants = findViewById(R.id.variants);
+
         next.setEnabled(false);
         previous.setEnabled(false);
 
@@ -56,10 +58,14 @@ public class ExamActivity extends AppCompatActivity {
                     public void onClick(View v) {
                         answer.add(variants.getCheckedRadioButtonId());
                         showAnswer();
+                        saveAnswer();
                         position++;
                         variants.check(-1);
                         if (position == questions.size()) {
-                            startActivity(new Intent(ExamActivity.this, ResultActivity.class));
+                            Intent intent = ResultActivity.resultIntent(ExamActivity.this, trueCount);
+                            startActivity(intent);
+                            position--;
+                            trueCount = 0;
                         } else {
                             fillForm();
                         }
@@ -77,7 +83,6 @@ public class ExamActivity extends AppCompatActivity {
                 }
         );
 
-        Button hint = findViewById(R.id.hint);
         hint.setOnClickListener(
                 new View.OnClickListener() {
                     @Override
@@ -169,8 +174,10 @@ public class ExamActivity extends AppCompatActivity {
     );
 
     private void fillForm() {
-        findViewById(R.id.previous).setEnabled(position != 0);
-        findViewById(R.id.next).setEnabled(position != questions.size() - 1);
+        Button previous = findViewById(R.id.previous);
+        Button next = findViewById(R.id.next);
+        previous.setEnabled(position != 0);
+        next.setEnabled(position != questions.size() - 1);
         final TextView text = findViewById(R.id.question);
         Question question = this.questions.get(this.position);
         text.setText(question.getText());
@@ -187,9 +194,18 @@ public class ExamActivity extends AppCompatActivity {
         RadioGroup variants = findViewById(R.id.variants);
         int id = variants.getCheckedRadioButtonId();
         Question question = this.questions.get(this.position);
+        int answer = question.getAnswer();
         Toast.makeText(
-                this, "Your answer is " + id + ", correct is " + question.getAnswer(),
+                this, "Your answer is " + id + ", correct is " + answer,
                 Toast.LENGTH_SHORT
         ).show();
+        if (id == answer) {
+            trueCount++;
+        }
+    }
+
+    private void saveAnswer() {
+        RadioGroup variants = findViewById(R.id.variants);
+        this.answer.add(position, variants.getCheckedRadioButtonId());
     }
 }
