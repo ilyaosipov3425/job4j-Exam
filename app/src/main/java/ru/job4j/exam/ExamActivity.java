@@ -3,7 +3,6 @@ package ru.job4j.exam;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.Log;
-import android.view.View;
 import android.widget.Button;
 import android.widget.RadioButton;
 import android.widget.RadioGroup;
@@ -39,34 +38,26 @@ public class ExamActivity extends AppCompatActivity {
         next.setEnabled(false);
         previous.setEnabled(false);
 
-        variants.setOnCheckedChangeListener(new RadioGroup.OnCheckedChangeListener() {
-            @Override
-            public void onCheckedChanged(RadioGroup group, int checkedId) {
+        variants.setOnCheckedChangeListener((group, checkedId) -> {
                 next.setEnabled(checkedId != -1 && position != questions.size() - 1);
                 previous.setEnabled(checkedId != 1 && position != 0);
-            }
         });
 
         next.setOnClickListener(
-                new View.OnClickListener() {
-                    @Override
-                    public void onClick(View v) {
-                        answer.add(variants.getCheckedRadioButtonId());
-                        showAnswer();
-                        position++;
-                        fillForm();
-                        variants.check(-1);
-                    }
+                (v) -> {
+                    answer.add(variants.getCheckedRadioButtonId());
+                    showAnswer();
+                    position++;
+                    fillForm();
+                    variants.check(-1);
                 }
+
         );
 
         previous.setOnClickListener(
-                new View.OnClickListener() {
-                    @Override
-                    public void onClick(View v) {
-                        position--;
-                        fillForm();
-                    }
+                (v) -> {
+                    position--;
+                    fillForm();
                 }
         );
         Log.d(TAG, "onCreate");

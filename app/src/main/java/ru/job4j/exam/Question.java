@@ -1,6 +1,10 @@
 package ru.job4j.exam;
 
+import android.annotation.TargetApi;
+import android.os.Build;
+
 import java.util.List;
+import java.util.Objects;
 
 /**
  * Класс Question - вопрос с вариантами ответов и правильным ответом
@@ -52,5 +56,23 @@ public class Question {
 
     public void setAnswer(int answer) {
         this.answer = answer;
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) {
+            return true;
+        }
+        if (o == null || getClass() != o.getClass()) {
+            return false;
+        }
+        Question question = (Question) o;
+        return id == question.id;
+    }
+
+    @TargetApi(Build.VERSION_CODES.KITKAT)
+    @Override
+    public int hashCode() {
+        return Objects.hash(id);
     }
 }
