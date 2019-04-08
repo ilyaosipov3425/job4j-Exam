@@ -3,7 +3,6 @@ package ru.job4j.exam;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.v7.app.AppCompatActivity;
-import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
 
@@ -43,12 +42,7 @@ public class HintActivity extends AppCompatActivity {
 
         Button back = findViewById(R.id.back);
         back.setOnClickListener(
-                new View.OnClickListener() {
-                    @Override
-                    public void onClick(View v) {
-                        onBackPressed();
-                    }
-                }
+                (v) -> onBackPressed()
         );
     }
 }

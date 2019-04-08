@@ -43,58 +43,15 @@ public class ExamActivity extends AppCompatActivity {
 
         next.setEnabled(false);
         previous.setEnabled(false);
+        variants.setOnCheckedChangeListener(
+                (group, checkedId) -> {
+                    next.setEnabled(true);
+                    previous.setEnabled(checkedId != 1 && position != 0);
+                });
 
-        variants.setOnCheckedChangeListener(new RadioGroup.OnCheckedChangeListener() {
-            @Override
-            public void onCheckedChanged(RadioGroup group, int checkedId) {
-                next.setEnabled(true);
-                previous.setEnabled(checkedId != 1 && position != 0);
-            }
-        });
-
-        next.setOnClickListener(
-                new View.OnClickListener() {
-                    @Override
-                    public void onClick(View v) {
-                        answer.add(variants.getCheckedRadioButtonId());
-                        showAnswer();
-                        saveAnswer();
-                        position++;
-                        variants.check(-1);
-                        if (position == questions.size()) {
-                            Intent intent = ResultActivity.resultIntent(ExamActivity.this, trueCount);
-                            startActivity(intent);
-                            position--;
-                            trueCount = 0;
-                        } else {
-                            fillForm();
-                        }
-                    }
-                }
-        );
-
-        previous.setOnClickListener(
-                new View.OnClickListener() {
-                    @Override
-                    public void onClick(View v) {
-                        position--;
-                        fillForm();
-                    }
-                }
-        );
-
-        hint.setOnClickListener(
-                new View.OnClickListener() {
-                    @Override
-                    public void onClick(View view) {
-                        Intent intent = new Intent(ExamActivity.this, HintActivity.class);
-                        intent.putExtra(HINT_FOR, position);
-                        intent.putExtra(ANSWER_FOR, position);
-                        startActivity(intent);
-                    }
-                }
-        );
-
+        next.setOnClickListener(this::nextButton);
+        previous.setOnClickListener(this::previousButton);
+        hint.setOnClickListener(this::hintButton);
         Log.d(TAG, "onCreate");
     }
 
@@ -173,7 +130,7 @@ public class ExamActivity extends AppCompatActivity {
             )
     );
 
-    private void fillForm() {
+    public void fillForm() {
         Button previous = findViewById(R.id.previous);
         Button next = findViewById(R.id.next);
         previous.setEnabled(position != 0);
@@ -207,5 +164,34 @@ public class ExamActivity extends AppCompatActivity {
     private void saveAnswer() {
         RadioGroup variants = findViewById(R.id.variants);
         this.answer.add(position, variants.getCheckedRadioButtonId());
+    }
+
+    private void nextButton(View view) {
+        RadioGroup variants = findViewById(R.id.variants);
+        answer.add(variants.getCheckedRadioButtonId());
+        showAnswer();
+        saveAnswer();
+        position++;
+        variants.check(-1);
+        if (position == questions.size()) {
+            Intent intent = ResultActivity.resultIntent(ExamActivity.this, trueCount);
+            startActivity(intent);
+            position--;
+            trueCount = 0;
+        } else {
+            fillForm();
+        }
+    }
+
+    private void previousButton(View view) {
+        position--;
+        fillForm();
+    }
+
+    private void hintButton(View view) {
+        Intent intent = new Intent(ExamActivity.this, HintActivity.class);
+        intent.putExtra(HINT_FOR, position);
+        intent.putExtra(ANSWER_FOR, position);
+        startActivity(intent);
     }
 }
