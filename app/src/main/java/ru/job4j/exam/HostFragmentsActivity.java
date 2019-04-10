@@ -31,15 +31,6 @@ public class HostFragmentsActivity extends AppCompatActivity implements FirstFra
                     .add(R.id.fragment_container, firstFragment)
                     .commit();
         }
-
-        fm = getSupportFragmentManager();
-        secondFragment = fm.findFragmentById(R.id.fragment_container);
-        if (firstFragment == null) {
-            firstFragment = new SecondFragment();
-            fm.beginTransaction()
-                    .add(R.id.fragment_container, firstFragment)
-                    .commit();
-        }
     }
 
     @Override
@@ -64,9 +55,9 @@ public class HostFragmentsActivity extends AppCompatActivity implements FirstFra
             firstFragment = new FirstFragment();
         }
         firstFragment.setArguments(bundle);
+        fm.popBackStack();
         fm.beginTransaction()
                 .replace(R.id.fragment_container, firstFragment)
-                .addToBackStack(null)
                 .commit();
     }
 }

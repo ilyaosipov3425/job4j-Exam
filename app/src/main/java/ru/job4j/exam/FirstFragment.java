@@ -6,7 +6,8 @@ import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.Button;;
+import android.widget.Button;
+import android.widget.TextView;
 
 /**
  * Класс FirstFragment - первый фрагмент
@@ -18,25 +19,25 @@ import android.widget.Button;;
 public class FirstFragment extends Fragment {
     private Button nextFragment;
     private OnNextButtonClickListener callback;
+    private TextView text;
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
 
         View view = inflater.inflate(R.layout.fragment_first, container, false);
-        //return view;
-
+        text = view.findViewById(R.id.message_first);
         nextFragment = view.findViewById(R.id.next_fragment);
-        nextFragment.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                callback.onNextButtonClicked("Next button clicked");
-            }
-        });
+        nextFragment.setOnClickListener(this::onClick);
+
         return view;
     }
 
     public interface OnNextButtonClickListener {
         void onNextButtonClicked(String message);
+    }
+
+    public void onClick(View view) {
+        callback.onNextButtonClicked("Next button clicked");
     }
 
     @Override
@@ -49,5 +50,14 @@ public class FirstFragment extends Fragment {
     public void onDetach() {
         super.onDetach();
         callback = null;
+    }
+
+    @Override
+    public void onStart() {
+        super.onStart();
+        Bundle bundle = getArguments();
+        if (bundle != null) {
+            text.setText(bundle.getString("message"));
+        }
     }
 }
