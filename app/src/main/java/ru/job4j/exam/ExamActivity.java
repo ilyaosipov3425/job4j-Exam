@@ -1,8 +1,10 @@
 package ru.job4j.exam;
 
+import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.Log;
+import android.view.View;
 import android.widget.Button;
 import android.widget.RadioButton;
 import android.widget.RadioGroup;
@@ -21,8 +23,11 @@ import java.util.List;
  */
 
 public class ExamActivity extends AppCompatActivity {
+    public static final String HINT_FOR = "hint for";
+    public static final String ANSWER_FOR = "answer for";
     private static final String TAG = "ExamActivity";
     private List<Integer> answer = new ArrayList<>();
+    private int trueCount = 0;
     private int count = 0;
     private int position = 0;
 
@@ -31,35 +36,22 @@ public class ExamActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_exam);
         this.fillForm();
-
         final Button next = findViewById(R.id.next);
         final Button previous = findViewById(R.id.previous);
+        final Button hint = findViewById(R.id.hint);
         final RadioGroup variants = findViewById(R.id.variants);
+
         next.setEnabled(false);
         previous.setEnabled(false);
+        variants.setOnCheckedChangeListener(
+                (group, checkedId) -> {
+                    next.setEnabled(true);
+                    previous.setEnabled(checkedId != 1 && position != 0);
+                });
 
-        variants.setOnCheckedChangeListener((group, checkedId) -> {
-                next.setEnabled(checkedId != -1 && position != questions.size() - 1);
-                previous.setEnabled(checkedId != 1 && position != 0);
-        });
-
-        next.setOnClickListener(
-                (v) -> {
-                    answer.add(variants.getCheckedRadioButtonId());
-                    showAnswer();
-                    position++;
-                    fillForm();
-                    variants.check(-1);
-                }
-
-        );
-
-        previous.setOnClickListener(
-                (v) -> {
-                    position--;
-                    fillForm();
-                }
-        );
+        next.setOnClickListener(this::nextButton);
+        previous.setOnClickListener(this::previousButton);
+        hint.setOnClickListener(this::hintButton);
         Log.d(TAG, "onCreate");
     }
 
@@ -138,9 +130,11 @@ public class ExamActivity extends AppCompatActivity {
             )
     );
 
-    private void fillForm() {
-        findViewById(R.id.previous).setEnabled(position != 0);
-        findViewById(R.id.next).setEnabled(position != questions.size() - 1);
+    public void fillForm() {
+        Button previous = findViewById(R.id.previous);
+        Button next = findViewById(R.id.next);
+        previous.setEnabled(position != 0);
+        next.setEnabled(position != questions.size() - 1);
         final TextView text = findViewById(R.id.question);
         Question question = this.questions.get(this.position);
         text.setText(question.getText());
@@ -157,9 +151,47 @@ public class ExamActivity extends AppCompatActivity {
         RadioGroup variants = findViewById(R.id.variants);
         int id = variants.getCheckedRadioButtonId();
         Question question = this.questions.get(this.position);
+        int answer = question.getAnswer();
         Toast.makeText(
-                this, "Your answer is " + id + ", correct is " + question.getAnswer(),
+                this, "Your answer is " + id + ", correct is " + answer,
                 Toast.LENGTH_SHORT
         ).show();
+        if (id == answer) {
+            trueCount++;
+        }
+    }
+
+    private void saveAnswer() {
+        RadioGroup variants = findViewById(R.id.variants);
+        this.answer.add(position, variants.getCheckedRadioButtonId());
+    }
+
+    private void nextButton(View view) {
+        RadioGroup variants = findViewById(R.id.variants);
+        answer.add(variants.getCheckedRadioButtonId());
+        showAnswer();
+        saveAnswer();
+        position++;
+        variants.check(-1);
+        if (position == questions.size()) {
+            Intent intent = ResultActivity.resultIntent(ExamActivity.this, trueCount);
+            startActivity(intent);
+            position--;
+            trueCount = 0;
+        } else {
+            fillForm();
+        }
+    }
+
+    private void previousButton(View view) {
+        position--;
+        fillForm();
+    }
+
+    private void hintButton(View view) {
+        Intent intent = new Intent(ExamActivity.this, HintActivity.class);
+        intent.putExtra(HINT_FOR, position);
+        intent.putExtra(ANSWER_FOR, position);
+        startActivity(intent);
     }
 }

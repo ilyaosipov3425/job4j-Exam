@@ -1,16 +1,21 @@
 <resources>
     <string name="app_name">Job4j Exam</string>
     <string name="hello">Привет, Илья Осипов</string>
+    <string name="result">Ваш результат теста :</string>
+    <string name="resultAnswer">Не верно</string>
+    <string name="hint">Подсказка</string>
+    <string name="answer">Результат</string>
 
     <!-- Название переключателей -->
-    <string name="RadioButton1">Переключатель</string>
-    <string name="RadioButton2">Переключатель</string>
-    <string name="RadioButton3">Переключатель</string>
-    <string name="RadioButton4">Переключатель</string>
+    <string name="radioButton1">Переключатель</string>
+    <string name="radioButton2">Переключатель</string>
+    <string name="radioButton3">Переключатель</string>
+    <string name="radioButton4">Переключатель</string>
 
     <!-- Название кнопок -->
-    <string name="ButtonBack">Назад</string>
-    <string name="ButtonNext">Далее</string>
+    <string name="buttonBack">Назад</string>
+    <string name="buttonNext">Далее</string>
+    <string name="buttonHint">Подсказка</string>
 
     <!-- Массив содежит название областей -->
     <string name="domain_prompt">Выберите область</string>
@@ -89,13 +94,13 @@
     </string-array>
 
     <!-- Название строк в custom_layout -->
-    <string name="Date">Дата</string>
-    <string name="City">Город</string>
-    <string name="Name_object">Номер объекта</string>
-    <string name="Street_house">Улица и дом</string>
-    <string name="Customer">ФИО заказчика</string>
-    <string name="Air_temperature">Температура воздуха</string>
-    <string name="Air_humidity">Влажность воздуха</string>
-    <string name="Air_pressure">Атмосферное давление</string>
-    <string name="Report_number">Номер отчёта</string>
+    <string name="date">Дата</string>
+    <string name="city">Город</string>
+    <string name="name_object">Номер объекта</string>
+    <string name="street_house">Улица и дом</string>
+    <string name="customer">ФИО заказчика</string>
+    <string name="air_temperature">Температура воздуха</string>
+    <string name="air_humidity">Влажность воздуха</string>
+    <string name="air_pressure">Атмосферное давление</string>
+    <string name="report_number">Номер отчёта</string>
 </resources>

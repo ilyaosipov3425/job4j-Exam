@@ -23,8 +23,8 @@
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
                 android:width="400dp"
-                android:text="@string/Date"
-                tools:text="@string/Date" />
+                android:text="@string/date"
+                tools:text="@string/date" />
 
             <Spinner
                 android:id="@+id/spinner4"
@@ -66,8 +66,8 @@
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
                 android:width="375dp"
-                android:text="@string/City"
-                tools:text="@string/City" />
+                android:text="@string/city"
+                tools:text="@string/city" />
 
             <Spinner
                 android:id="@+id/spinner2"
@@ -91,8 +91,8 @@
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
                 android:width="175dp"
-                android:text="@string/Name_object"
-                tools:text="@string/Name_object" />
+                android:text="@string/name_object"
+                tools:text="@string/name_object" />
 
             <EditText
                 android:id="@+id/editText2"
@@ -101,9 +101,9 @@
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
                 android:ems="10"
-                android:hint="@string/Name_object"
+                android:hint="@string/name_object"
                 android:inputType="textPersonName"
-                tools:text="@string/Name_object" />
+                tools:text="@string/name_object" />
 
         </LinearLayout>
 
@@ -119,8 +119,8 @@
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
                 android:width="175dp"
-                android:text="@string/Street_house"
-                tools:text="@string/Street_house" />
+                android:text="@string/street_house"
+                tools:text="@string/street_house" />
 
             <EditText
                 android:id="@+id/editText3"
@@ -129,9 +129,9 @@
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
                 android:ems="10"
-                android:hint="@string/Street_house"
+                android:hint="@string/street_house"
                 android:inputType="textPersonName"
-                tools:text="@string/Street_house" />
+                tools:text="@string/street_house" />
         </LinearLayout>
 
         <LinearLayout
@@ -146,8 +146,8 @@
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
                 android:width="175dp"
-                android:text="@string/Customer"
-                tools:text="@string/Customer" />
+                android:text="@string/customer"
+                tools:text="@string/customer" />
 
             <EditText
                 android:id="@+id/editText4"
@@ -156,9 +156,9 @@
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
                 android:ems="10"
-                android:hint="@string/Customer"
+                android:hint="@string/customer"
                 android:inputType="textPersonName"
-                tools:text="@string/Customer" />
+                tools:text="@string/customer" />
         </LinearLayout>
 
         <LinearLayout
@@ -173,8 +173,8 @@
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
                 android:width="175dp"
-                android:text="@string/Air_temperature"
-                tools:text="@string/Air_temperature" />
+                android:text="@string/air_temperature"
+                tools:text="@string/air_temperature" />
 
             <EditText
                 android:id="@+id/editText5"
@@ -183,9 +183,9 @@
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
                 android:ems="10"
-                android:hint="@string/Air_temperature"
+                android:hint="@string/air_temperature"
                 android:inputType="textPersonName"
-                tools:text="@string/Air_temperature" />
+                tools:text="@string/air_temperature" />
         </LinearLayout>
 
         <LinearLayout
@@ -200,8 +200,8 @@
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
                 android:width="175dp"
-                android:text="@string/Air_humidity"
-                tools:text="@string/Air_humidity" />
+                android:text="@string/air_humidity"
+                tools:text="@string/air_humidity" />
 
             <EditText
                 android:id="@+id/editText6"
@@ -210,9 +210,9 @@
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
                 android:ems="10"
-                android:hint="@string/Air_humidity"
+                android:hint="@string/air_humidity"
                 android:inputType="textPersonName"
-                tools:text="@string/Air_humidity" />
+                tools:text="@string/air_humidity" />
         </LinearLayout>
 
         <LinearLayout
@@ -227,8 +227,8 @@
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
                 android:width="175dp"
-                android:text="@string/Air_pressure"
-                tools:text="@string/Air_pressure" />
+                android:text="@string/air_pressure"
+                tools:text="@string/air_pressure" />
 
             <EditText
                 android:id="@+id/editText7"
@@ -237,9 +237,9 @@
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
                 android:ems="10"
-                android:hint="@string/Air_pressure"
+                android:hint="@string/air_pressure"
                 android:inputType="textPersonName"
-                tools:text="@string/Air_pressure" />
+                tools:text="@string/air_pressure" />
         </LinearLayout>
 
         <LinearLayout
@@ -254,8 +254,8 @@
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
                 android:width="175dp"
-                android:text="@string/Report_number"
-                tools:text="@string/Report_number" />
+                android:text="@string/report_number"
+                tools:text="@string/report_number" />
 
             <EditText
                 android:id="@+id/editText8"
@@ -264,9 +264,9 @@
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
                 android:ems="10"
-                android:hint="@string/Report_number"
+                android:hint="@string/report_number"
                 android:inputType="textPersonName"
-                tools:text="@string/Report_number" />
+                tools:text="@string/report_number" />
         </LinearLayout>
 
         <LinearLayout
@@ -279,14 +279,14 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
-                android:text="@string/ButtonBack" />
+                android:text="@string/buttonBack" />
 
             <Button
                 android:id="@+id/button4"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
-                android:text="@string/ButtonNext" />
+                android:text="@string/buttonNext" />
         </LinearLayout>
 
     </LinearLayout>
