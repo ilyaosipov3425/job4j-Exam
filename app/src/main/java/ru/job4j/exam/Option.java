@@ -1,5 +1,10 @@
 package ru.job4j.exam;
 
+import android.annotation.TargetApi;
+import android.os.Build;
+
+import java.util.Objects;
+
 /**
  * Класс Option - вариант ответов
  * @author Ilya Osipov (mailto:il.osipov.ya@yandex.ru)
@@ -22,5 +27,23 @@ public class Option {
 
     public String getText() {
         return text;
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) {
+            return true;
+        }
+        if (o == null || getClass() != o.getClass()) {
+            return false;
+        }
+        Option option = (Option) o;
+        return id == option.id;
+    }
+
+    @TargetApi(Build.VERSION_CODES.KITKAT)
+    @Override
+    public int hashCode() {
+        return Objects.hash(id);
     }
 }
