@@ -65,8 +65,11 @@ public class ExamActivity extends AppCompatActivity {
     protected void onRestoreInstanceState(Bundle savedInstanceState) {
         super.onRestoreInstanceState(savedInstanceState);
         count = savedInstanceState.getInt("ExamActivity", count);
+        position = savedInstanceState.getInt("position", position);
+        fillForm();
         Log.d(TAG, "onRestoreInstanceState");
         Log.d(TAG, "Count = " + ++count);
+        Log.d(TAG, "position " + position);
     }
 
     @Override
@@ -79,6 +82,7 @@ public class ExamActivity extends AppCompatActivity {
     protected void onSaveInstanceState(Bundle outState) {
         super.onSaveInstanceState(outState);
         outState.putInt("ExamActivity", count);
+        outState.putInt("position", position);
         Log.d(TAG, "onSaveInstanceState");
     }
 
