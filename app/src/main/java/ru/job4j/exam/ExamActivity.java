@@ -39,6 +39,7 @@ public class ExamActivity extends AppCompatActivity {
         final Button next = findViewById(R.id.next);
         final Button previous = findViewById(R.id.previous);
         final Button hint = findViewById(R.id.hint);
+        final Button backToList = findViewById(R.id.list_exams);
         final RadioGroup variants = findViewById(R.id.variants);
 
         next.setEnabled(false);
@@ -52,6 +53,7 @@ public class ExamActivity extends AppCompatActivity {
         next.setOnClickListener(this::nextButton);
         previous.setOnClickListener(this::previousButton);
         hint.setOnClickListener(this::hintButton);
+        backToList.setOnClickListener(this::backToListButton);
         Log.d(TAG, "onCreate");
     }
 
@@ -193,5 +195,11 @@ public class ExamActivity extends AppCompatActivity {
         intent.putExtra(HINT_FOR, position);
         intent.putExtra(ANSWER_FOR, position);
         startActivity(intent);
+    }
+
+    private void backToListButton(View view) {
+        Button backToList = findViewById(R.id.list_exams);
+        backToList.setOnClickListener(
+                (v) -> onBackPressed());
     }
 }

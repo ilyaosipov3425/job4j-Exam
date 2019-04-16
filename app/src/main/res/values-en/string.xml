@@ -17,6 +17,7 @@
     <string name="buttonBack">Back</string>
     <string name="buttonNext">Next</string>
     <string name="buttonHint">Hint</string>
+    <string name="buttonListExams">List of Exams</string>
 
     <!-- The array contains the name of the region -->
     <string name="domain_prompt">Select region</string>
@@ -105,4 +106,8 @@
     <string name="air_pressure">Air pressure</string>
     <string name="report_number">Report number</string>
 
+    <!-- The name of the rows in info_exam -->
+    <string name="dateExam">date</string>
+    <string name="infoExam">info</string>
+    <string name="resultExam">result</string>
 </resources>
