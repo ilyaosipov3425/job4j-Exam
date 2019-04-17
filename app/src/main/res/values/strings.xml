@@ -109,4 +109,8 @@
     <string name="dateExam">дата</string>
     <string name="infoExam">информация</string>
     <string name="resultExam">результат</string>
+
+    <!-- Название в activity_date_time -->
+    <string name="date_time">Дата/Время</string>
+    <string name="button_date_time">Установить дату и время</string>
 </resources>
