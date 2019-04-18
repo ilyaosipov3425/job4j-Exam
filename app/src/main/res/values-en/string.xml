@@ -110,4 +110,9 @@
     <string name="dateExam">date</string>
     <string name="infoExam">info</string>
     <string name="resultExam">result</string>
+
+    <!-- String resources for the menu -->
+    <string name="add_item">Add</string>
+    <string name="delete_item">Delete</string>
+    <string name="menu_delete">Delete all?</string>
 </resources>

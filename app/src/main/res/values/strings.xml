@@ -109,4 +109,9 @@
     <string name="dateExam">дата</string>
     <string name="infoExam">информация</string>
     <string name="resultExam">результат</string>
+
+    <!-- Строковые ресурсы для меню -->
+    <string name="add_item">Добавить</string>
+    <string name="delete_item">Удалить</string>
+    <string name="menu_delete">Удалить всё?</string>
 </resources>
