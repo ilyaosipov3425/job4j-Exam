@@ -16,6 +16,7 @@
     <string name="buttonBack">Назад</string>
     <string name="buttonNext">Далее</string>
     <string name="buttonHint">Подсказка</string>
+    <string name="buttonListExams">Список экзаменов</string>
 
     <!-- Массив содежит название областей -->
     <string name="domain_prompt">Выберите область</string>
@@ -103,4 +104,9 @@
     <string name="air_humidity">Влажность воздуха</string>
     <string name="air_pressure">Атмосферное давление</string>
     <string name="report_number">Номер отчёта</string>
+
+    <!-- Название строк в info_exam -->
+    <string name="dateExam">дата</string>
+    <string name="infoExam">информация</string>
+    <string name="resultExam">результат</string>
 </resources>

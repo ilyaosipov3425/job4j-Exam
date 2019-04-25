@@ -83,4 +83,11 @@
             android:text="@string/buttonNext"
             android:textSize="12sp" />
     </LinearLayout>
+
+    <Button
+        android:id="@+id/list_exams"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/buttonListExams"
+        android:textSize="12sp" />
 </LinearLayout>
