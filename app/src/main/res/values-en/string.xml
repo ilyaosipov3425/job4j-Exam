@@ -110,4 +110,8 @@
     <string name="dateExam">date</string>
     <string name="infoExam">info</string>
     <string name="resultExam">result</string>
+
+    <!-- The name in activity_date_time -->
+    <string name="date_time">Date/Time</string>
+    <string name="button_date_time">Set date &amp; time</string>
 </resources>

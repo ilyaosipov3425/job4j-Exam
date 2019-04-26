@@ -1,6 +1,8 @@
 package ru.job4j.exam;
 
+import android.app.Dialog;
 import android.content.Intent;
+import android.support.v4.app.DialogFragment;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.Log;
@@ -22,7 +24,7 @@ import java.util.List;
  * @version $Id$
  */
 
-public class ExamActivity extends AppCompatActivity {
+public class ExamActivity extends AppCompatActivity implements ConfirmHintDialogFragment.ConfirmHintDialogListener {
     public static final String HINT_FOR = "hint for";
     public static final String ANSWER_FOR = "answer for";
     private static final String TAG = "ExamActivity";
@@ -195,10 +197,8 @@ public class ExamActivity extends AppCompatActivity {
     }
 
     private void hintButton(View view) {
-        Intent intent = new Intent(ExamActivity.this, HintActivity.class);
-        intent.putExtra(HINT_FOR, position);
-        intent.putExtra(ANSWER_FOR, position);
-        startActivity(intent);
+        DialogFragment dialog = new ConfirmHintDialogFragment();
+        dialog.show(getSupportFragmentManager(), "dialog_tag");
     }
 
     private void backToListButton(View view) {
@@ -206,4 +206,19 @@ public class ExamActivity extends AppCompatActivity {
         backToList.setOnClickListener(
                 (v) -> onBackPressed());
     }
+
+    @Override
+    public void onPositiveDialogClick(DialogFragment dialog) {
+        Intent intent = new Intent(ExamActivity.this, HintActivity.class);
+        intent.putExtra(HINT_FOR, position);
+        intent.putExtra(ANSWER_FOR, position);
+        startActivity(intent);
+    }
+
+    @Override
+    public void onNegativeDialogClick(DialogFragment dialog) {
+        Toast.makeText(this, "Well done!!!", Toast.LENGTH_SHORT).show();
+    }
+
+
 }
