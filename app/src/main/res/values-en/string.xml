@@ -113,6 +113,7 @@
 
     <!-- String resources for the menu -->
     <string name="add_item">Add</string>
+    <string name="menu_add">Add new exam?</string>
     <string name="delete_item">Delete</string>
     <string name="menu_delete">Delete all?</string>
 </resources>

@@ -29,7 +29,8 @@ import java.util.List;
  * @version $Id$
  */
 
-public class ExamsActivity extends AppCompatActivity implements MenuDeleteDialogFragment.MenuDeleteDialogListener {
+public class ExamsActivity extends AppCompatActivity implements MenuDeleteDialogFragment.MenuDeleteDialogListener,
+        MenuAddDialogFragment.MenuAddDialogListener {
     private RecyclerView recycler;
 
     @Override
@@ -130,26 +131,20 @@ public class ExamsActivity extends AppCompatActivity implements MenuDeleteDialog
     public boolean onOptionsItemSelected(MenuItem item) {
         switch(item.getItemId()) {
             case R.id.add_item:
-                onAddItem();
-                Toast.makeText(ExamsActivity.this, "ADD", Toast.LENGTH_SHORT).show();
+                DialogFragment dialogAdd = new MenuAddDialogFragment();
+                dialogAdd.show(getSupportFragmentManager(), "dialog add");
                 return true;
             case R.id.delete_item:
-                DialogFragment dialog = new MenuDeleteDialogFragment();
-                dialog.show(getSupportFragmentManager(), "dialog delete");
+                DialogFragment dialogDel = new MenuDeleteDialogFragment();
+                dialogDel.show(getSupportFragmentManager(), "dialog delete");
                 return true;
             default:
                 return super.onOptionsItemSelected(item);
         }
     }
 
-    public void onAddItem() {
-        List<Exam> exams = new ArrayList<>();
-        exams.add(new Exam(exams.size(), String.format("Exam %s", exams.size()), System.currentTimeMillis(), exams.size()));
-        recycler.setAdapter(new ExamAdapter(exams));
-    }
-
     @Override
-    public void onPositiveDialogClick(DialogFragment dialog) {
+    public void onPositiveDeleteClick(DialogFragment dialog) {
         List<Exam> exams = new ArrayList<>();
         exams.removeAll(exams);
         this.recycler.setAdapter(new ExamAdapter(exams));
@@ -158,8 +153,23 @@ public class ExamsActivity extends AppCompatActivity implements MenuDeleteDialog
     }
 
     @Override
-    public void onNegativeDialogClick(DialogFragment dialog) {
+    public void onNegativeDeleteClick(DialogFragment dialog) {
         Toast.makeText(this, "Delete canceled",
+                Toast.LENGTH_SHORT).show();
+    }
+
+    @Override
+    public void onPositiveAddClick(DialogFragment dialog) {
+        List<Exam> exams = new ArrayList<>();
+        exams.add(new Exam(exams.size(), String.format("Exam %s", exams.size()), System.currentTimeMillis(), exams.size()));
+        this.recycler.setAdapter(new ExamAdapter(exams));
+        Toast.makeText(this, "Add new exam",
+                Toast.LENGTH_SHORT).show();
+    }
+
+    @Override
+    public void onNegativeAddClick(DialogFragment dialog) {
+        Toast.makeText(this, "Cancel add",
                 Toast.LENGTH_SHORT).show();
     }
 }

@@ -7,42 +7,42 @@ import android.os.Bundle;
 import android.support.v4.app.DialogFragment;
 
 /**
- * Класс MenuDeleteDialogFragment - диалоговое окно меню delete
+ * Класс MenuAddDialogFragment - диалоговое окно меню add
  * @author Ilya Osipov (mailto:il.osipov.ya@yandex.ru)
- * @since 29.04.2019
+ * @since 07.05.2019
  * @version $Id$
  */
 
-public class MenuDeleteDialogFragment extends DialogFragment {
-    private MenuDeleteDialogListener callback;
+public class MenuAddDialogFragment extends DialogFragment {
+    private MenuAddDialogListener callback;
 
     @Override
     public Dialog onCreateDialog(Bundle savedInstanceState) {
         Dialog dialog = new AlertDialog.Builder(getActivity())
-                .setMessage(R.string.menu_delete)
+                .setMessage(R.string.menu_add)
                 .setPositiveButton(android.R.string.ok,
                         (dialogInterface, i) -> callback
-                                .onPositiveDeleteClick(MenuDeleteDialogFragment.this))
+                                .onPositiveAddClick(MenuAddDialogFragment.this))
                 .setNegativeButton(android.R.string.cancel,
                         (dialogInterface, i) -> callback
-                                .onNegativeDeleteClick(MenuDeleteDialogFragment.this))
+                                .onNegativeAddClick(MenuAddDialogFragment.this))
                 .create();
         return dialog;
     }
 
-    public interface  MenuDeleteDialogListener {
-        void onPositiveDeleteClick(DialogFragment dialog);
-        void onNegativeDeleteClick(DialogFragment dialog);
+    public interface MenuAddDialogListener {
+        void onPositiveAddClick(DialogFragment dialog);
+        void onNegativeAddClick(DialogFragment dialog);
     }
 
     @Override
     public void onAttach(Context context) {
         super.onAttach(context);
         try {
-            callback = (MenuDeleteDialogListener) context;
+            callback = (MenuAddDialogListener) context;
         } catch (ClassCastException e) {
             throw new ClassCastException(
-                    String.format("%s must implement MenuDeleteDialogListener", context.toString()));
+                    String.format("%s must implement MenuAddDialogListener", context.toString()));
         }
     }
 
