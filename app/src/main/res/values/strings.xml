@@ -113,4 +113,10 @@
     <!-- Название в activity_date_time -->
     <string name="date_time">Дата/Время</string>
     <string name="button_date_time">Установить дату и время</string>
+
+    <!-- Строковые ресурсы для меню -->
+    <string name="add_item">Добавить</string>
+    <string name="menu_add">Добавить новый экзамен?</string>
+    <string name="delete_item">Удалить</string>
+    <string name="menu_delete">Удалить всё?</string>
 </resources>

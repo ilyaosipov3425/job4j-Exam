@@ -114,4 +114,10 @@
     <!-- The name in activity_date_time -->
     <string name="date_time">Date/Time</string>
     <string name="button_date_time">Set date &amp; time</string>
+
+    <!-- String resources for the menu -->
+    <string name="add_item">Add</string>
+    <string name="menu_add">Add new exam?</string>
+    <string name="delete_item">Delete</string>
+    <string name="menu_delete">Delete all?</string>
 </resources>
