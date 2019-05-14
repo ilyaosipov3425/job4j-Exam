@@ -9,15 +9,19 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".appDataTime.DateTimeActivity">
+        <activity android:name=".appDataTime.DateTimeActivity"/>
+        <activity android:name=".ExamActivity"/>
+        <activity android:name=".ExamsActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".ExamActivity" />
-        <activity android:name=".ExamsActivity" />
+        <activity
+            android:name=".ExamUpdateActivity"
+            android:label="@string/exam_update_name">
+        </activity>
         <activity android:name=".HintActivity" />
         <activity android:name=".ResultActivity" />
         <activity android:name=".HostFragmentsActivity" />

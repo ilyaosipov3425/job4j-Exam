@@ -217,7 +217,7 @@ public class ExamActivity extends AppCompatActivity implements ConfirmHintDialog
 
     @Override
     public void onNegativeDialogClick(DialogFragment dialog) {
-        Toast.makeText(this, "Well done!!!", Toast.LENGTH_SHORT).show();
+        Toast.makeText(this, R.string.well_done, Toast.LENGTH_SHORT).show();
     }
 
 

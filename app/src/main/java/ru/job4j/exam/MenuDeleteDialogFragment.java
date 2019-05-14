@@ -30,7 +30,7 @@ public class MenuDeleteDialogFragment extends DialogFragment {
         return dialog;
     }
 
-    public interface  MenuDeleteDialogListener {
+    public interface MenuDeleteDialogListener {
         void onPositiveDeleteClick(DialogFragment dialog);
         void onNegativeDeleteClick(DialogFragment dialog);
     }

@@ -1,6 +1,9 @@
 package ru.job4j.exam;
 
+import android.content.ContentValues;
 import android.content.Intent;
+import android.database.Cursor;
+import android.database.sqlite.SQLiteDatabase;
 import android.os.Bundle;
 import android.support.annotation.NonNull;
 import android.support.annotation.Nullable;
@@ -22,6 +25,9 @@ import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
 
+import ru.job4j.exam.store.ExamBaseHelper;
+import ru.job4j.exam.store.ExamDbSchema;
+
 /**
  * Класс ExamsActivity
  * @author Ilya Osipov (mailto:il.osipov.ya@yandex.ru)
@@ -32,6 +38,7 @@ import java.util.List;
 public class ExamsActivity extends AppCompatActivity implements MenuDeleteDialogFragment.MenuDeleteDialogListener,
         MenuAddDialogFragment.MenuAddDialogListener {
     private RecyclerView recycler;
+    private SQLiteDatabase store;
 
     @Override
     protected void onCreate(@Nullable Bundle state) {
@@ -39,6 +46,7 @@ public class ExamsActivity extends AppCompatActivity implements MenuDeleteDialog
         setContentView(R.layout.exams);
         this.recycler = findViewById(R.id.exams);
         this.recycler.setLayoutManager(new LinearLayoutManager(getApplicationContext()));
+        this.store = new ExamBaseHelper(this.getApplicationContext()).getWritableDatabase();
         updateUI();
     }
 
@@ -109,34 +117,43 @@ public class ExamsActivity extends AppCompatActivity implements MenuDeleteDialog
         }
     }
 
-    /**
-     * Метод генерирует список экзаменов и загружает их в адаптер
-     */
     private void updateUI() {
         List<Exam> exams = new ArrayList<Exam>();
-        for (int index = 0; index != 100; index++) {
-            exams.add(new Exam(index, String.format("Exam %s", index), System.currentTimeMillis(), index));
+        Cursor cursor = this.store.query(
+                ExamDbSchema.ExamTable.NAME,
+                null, null, null,
+                null, null, null
+        );
+        cursor.moveToFirst();
+        while (!cursor.isAfterLast()) {
+            exams.add(new Exam(
+                    cursor.getInt(cursor.getColumnIndex("id")),
+                    cursor.getString(cursor.getColumnIndex("title")),
+                    System.currentTimeMillis(),
+                    100
+            ));
+            cursor.moveToNext();
         }
+        cursor.close();
         this.recycler.setAdapter(new ExamAdapter(exams));
     }
 
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
         MenuInflater inflater = getMenuInflater();
-        inflater.inflate(R.menu.activity_exams, menu);
+        inflater.inflate(R.menu.exams, menu);
         return true;
     }
 
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
-        switch(item.getItemId()) {
-            case R.id.add_item:
-                DialogFragment dialogAdd = new MenuAddDialogFragment();
-                dialogAdd.show(getSupportFragmentManager(), "dialog add");
+        switch (item.getItemId()) {
+            case R.id.add_exam:
+                startActivity(new Intent(this, ExamUpdateActivity.class));
                 return true;
-            case R.id.delete_item:
-                DialogFragment dialogDel = new MenuDeleteDialogFragment();
-                dialogDel.show(getSupportFragmentManager(), "dialog delete");
+            case R.id.delete_exam:
+                DialogFragment dialog = new MenuDeleteDialogFragment();
+                dialog.show(getSupportFragmentManager(), "dialog delete");
                 return true;
             default:
                 return super.onOptionsItemSelected(item);
@@ -146,8 +163,18 @@ public class ExamsActivity extends AppCompatActivity implements MenuDeleteDialog
     @Override
     public void onPositiveDeleteClick(DialogFragment dialog) {
         List<Exam> exams = new ArrayList<>();
+        Cursor cursor = this.store.query(
+                ExamDbSchema.ExamTable.NAME,
+                null, null, null,
+                null, null, null
+        );
+        cursor.moveToFirst();
         exams.removeAll(exams);
+        cursor.close();
         this.recycler.setAdapter(new ExamAdapter(exams));
+        store = new ExamBaseHelper(this.getApplicationContext()).getWritableDatabase();
+        store.delete(ExamDbSchema.ExamTable.NAME, null, null);
+        store.close();
         Toast.makeText(this, "All removed",
                 Toast.LENGTH_SHORT).show();
     }
@@ -160,16 +187,16 @@ public class ExamsActivity extends AppCompatActivity implements MenuDeleteDialog
 
     @Override
     public void onPositiveAddClick(DialogFragment dialog) {
-        List<Exam> exams = new ArrayList<>();
-        exams.add(new Exam(exams.size(), String.format("Exam %s", exams.size()), System.currentTimeMillis(), exams.size()));
-        this.recycler.setAdapter(new ExamAdapter(exams));
-        Toast.makeText(this, "Add new exam",
-                Toast.LENGTH_SHORT).show();
+        //List<Exam> exams = new ArrayList<>();
+        //exams.add(new Exam(exams.size(), String.format("Exam %s", exams.size()), System.currentTimeMillis(), exams.size()));
+        //this.recycler.setAdapter(new ExamAdapter(exams));
+        //Toast.makeText(this, "Add new exam",
+        //        Toast.LENGTH_SHORT).show();
     }
 
     @Override
     public void onNegativeAddClick(DialogFragment dialog) {
-        Toast.makeText(this, "Cancel add",
-                Toast.LENGTH_SHORT).show();
+        //Toast.makeText(this, "Cancel add",
+        //        Toast.LENGTH_SHORT).show();
     }
 }

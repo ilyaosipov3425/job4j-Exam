@@ -1,11 +1,22 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
+    <!-- String resources for job4jExam -->
     <string name="app_name">Job4j Exam</string>
     <string name="hello">Hello, Ilya Osipov</string>
     <string name="result">Your test result :</string>
     <string name="resultAnswer">False</string>
     <string name="hint">Hint</string>
     <string name="answer">Result</string>
+    <string name="exam_update_name">Create exam</string>
+    <string name="add_exam">Add exam</string>
+    <string name="delete_exam">Delete exam</string>
+    <string name="edit_exam">Edit exam</string>
+    <string name="edit_dialog">To edit the exam?</string>
+    <string name="name">Name</string>
+    <string name="test_name">Test name</string>
+    <string name="button_save">Save</string>
+    <string name="show_hint">Show hint?</string>
+    <string name="well_done">Well done!!!</string>
 
     <!-- The name of the RadioButtons -->
     <string name="radioButton1">RadioButton</string>

@@ -20,7 +20,7 @@ public class ConfirmHintDialogFragment extends DialogFragment {
     @Override
     public Dialog onCreateDialog(Bundle savedInstanceState) {
         Dialog dialog = new AlertDialog.Builder(getActivity())
-                .setMessage("Show hint?")
+                .setMessage(R.string.show_hint)
                 .setPositiveButton(android.R.string.ok,
                         (dialogInterface, i) -> callback.onPositiveDialogClick(ConfirmHintDialogFragment.this))
                 .setNegativeButton(android.R.string.cancel,
