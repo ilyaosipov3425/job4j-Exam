@@ -7,10 +7,13 @@
     <string name="hint">Подсказка</string>
     <string name="answer">Результат</string>
     <string name="exam_update_name">Создание экзамена</string>
+    <string name="exam_edit_name">Редактирование экзамена</string>
     <string name="add_exam">Добавить экзамен</string>
-    <string name="delete_exam">Удалить экзамены</string>
-    <string name="edit_exam">Редактировать экзамен</string>
-    <string name="edit_dialog">Отредактировать экзамен?</string>
+    <string name="delete_exams">Удалить экзамены</string>
+    <string name="edit_exams">Редактировать экзамен</string>
+    <string name="edit_dialog">Выберите экзамен для редактирования:</string>
+    <string name="delete_exam">Вы хотите удалить экзамен?</string>
+    <string name="edit_exam">Отредактировать экзамен?</string>
     <string name="name">Имя</string>
     <string name="test_name">Имя теста</string>
     <string name="button_save">Сохранить</string>
