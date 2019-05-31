@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:gravity="center"
@@ -11,7 +12,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="@string/hello"
-        android:textStyle="bold" />
+        android:textStyle="bold"/>
 
     <RadioGroup
         android:id="@+id/variants"
@@ -26,7 +27,7 @@
             android:layout_height="wrap_content"
             android:text="@string/radioButton1"
             android:textAllCaps="false"
-            android:textStyle="italic" />
+            android:textStyle="italic"/>
 
         <RadioButton
             android:id="@+id/radioButton2"
@@ -34,7 +35,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="@string/radioButton2"
-            android:textStyle="italic" />
+            android:textStyle="italic"/>
 
         <RadioButton
             android:id="@+id/radioButton3"
@@ -42,7 +43,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="@string/radioButton3"
-            android:textStyle="italic" />
+            android:textStyle="italic"/>
 
         <RadioButton
             android:id="@+id/radioButton4"
@@ -50,7 +51,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="@string/radioButton4"
-            android:textStyle="italic" />
+            android:textStyle="italic"/>
 
     </RadioGroup>
 
@@ -65,7 +66,7 @@
             android:layout_height="wrap_content"
             android:layout_weight="1"
             android:text="@string/buttonBack"
-            android:textSize="12sp" />
+            android:textSize="12sp"/>
 
         <Button
             android:id="@+id/hint"
@@ -73,7 +74,7 @@
             android:layout_height="wrap_content"
             android:layout_weight="1"
             android:text="@string/buttonHint"
-            android:textSize="12sp" />
+            android:textSize="12sp"/>
 
         <Button
             android:id="@+id/next"
@@ -81,7 +82,8 @@
             android:layout_height="wrap_content"
             android:layout_weight="1"
             android:text="@string/buttonNext"
-            android:textSize="12sp" />
+            android:textSize="12sp"/>
+
     </LinearLayout>
 
     <Button
@@ -89,5 +91,6 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="@string/buttonListExams"
-        android:textSize="12sp" />
+        android:textSize="12sp"/>
+
 </LinearLayout>

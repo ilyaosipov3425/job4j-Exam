@@ -1,4 +1,4 @@
-package ru.job4j.exam;
+package ru.job4j.exam.appFragment;
 
 import android.content.Context;
 import android.os.Bundle;
@@ -9,41 +9,43 @@ import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.TextView;
 
+import ru.job4j.exam.R;
+
 /**
- * Класс FirstFragment - первый фрагмент
+ * Класс SecondFragment - второй фрагмент
  * @author Ilya Osipov (mailto:il.osipov.ya@yandex.ru)
  * @since 01.04.2019
  * @version $Id$
  */
 
-public class FirstFragment extends Fragment {
-    private Button nextFragment;
-    private OnNextButtonClickListener callback;
+public class SecondFragment extends Fragment {
+
+    private Button backFragment;
+    private OnBackButtonClickListener callback;
     private TextView text;
 
     @Override
-    public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
-
-        View view = inflater.inflate(R.layout.fragment_first, container, false);
-        text = view.findViewById(R.id.message_first);
-        nextFragment = view.findViewById(R.id.next_fragment);
-        nextFragment.setOnClickListener(this::onClick);
+    public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savesInstanceState) {
+        View view = inflater.inflate(R.layout.fragment_second, container, false);
+        text = view.findViewById(R.id.message_second);
+        backFragment = view.findViewById(R.id.back_fragment);
+        backFragment.setOnClickListener(this::onClick);
 
         return view;
     }
 
-    public interface OnNextButtonClickListener {
-        void onNextButtonClicked(String message);
+    public interface OnBackButtonClickListener {
+        void onBackButtonClicked(String message);
     }
 
     public void onClick(View view) {
-        callback.onNextButtonClicked("Next button clicked");
+        callback.onBackButtonClicked("Back button licked");
     }
 
     @Override
     public void onAttach(Context context) {
         super.onAttach(context);
-        callback = (OnNextButtonClickListener) context;
+        callback = (OnBackButtonClickListener) context;
     }
 
     @Override

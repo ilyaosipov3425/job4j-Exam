@@ -1,10 +1,12 @@
-package ru.job4j.exam;
+package ru.job4j.exam.dialogFragment;
 
 import android.app.AlertDialog;
 import android.app.Dialog;
 import android.content.Context;
 import android.os.Bundle;
 import android.support.v4.app.DialogFragment;
+
+import ru.job4j.exam.R;
 
 /**
  * Класс MenuDeleteDialogFragment - диалоговое окно меню delete
@@ -14,6 +16,7 @@ import android.support.v4.app.DialogFragment;
  */
 
 public class MenuDeleteDialogFragment extends DialogFragment {
+
     private MenuDeleteDialogListener callback;
 
     @Override

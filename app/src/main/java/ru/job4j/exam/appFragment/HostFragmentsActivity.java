@@ -1,19 +1,22 @@
-package ru.job4j.exam;
+package ru.job4j.exam.appFragment;
 
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 
+import ru.job4j.exam.R;
+
 /**
- * Класс HostFragmentActivity
+ * Класс HostFragmentActivity - хост активити
  * @author Ilya Osipov (mailto:il.osipov.ya@yandex.ru)
  * @since 01.04.2019
  * @version $Id$
  */
 
-public class HostFragmentsActivity extends AppCompatActivity implements FirstFragment.OnNextButtonClickListener,
-        SecondFragment.OnBackButtonClickListener {
+public class HostFragmentsActivity extends AppCompatActivity
+        implements FirstFragment.OnNextButtonClickListener, SecondFragment.OnBackButtonClickListener {
+
     private FragmentManager fm;
     private Fragment firstFragment;
     private Fragment secondFragment;

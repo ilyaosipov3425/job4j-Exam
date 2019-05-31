@@ -17,6 +17,7 @@ import java.util.Map;
  */
 
 public class HintActivity extends AppCompatActivity {
+
     private final Map<Integer, String> answers = new HashMap<>();
     private final Map<Integer, String> ansQuestions = new HashMap<>();
 

@@ -20,6 +20,7 @@ import ru.job4j.exam.store.ExamDbSchema;
  */
 
 public class ExamUpdateActivity extends AppCompatActivity {
+
     private SQLiteDatabase store;
 
     @Override

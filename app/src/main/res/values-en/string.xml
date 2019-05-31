@@ -9,17 +9,24 @@
     <string name="answer">Result</string>
     <string name="exam_update_name">Create exam</string>
     <string name="exam_edit_name">Edit exam</string>
+    <string name="name">Name</string>
+    <string name="test_name">Test name</string>
+
+    <!-- String toast -->
     <string name="add_exam">Add exam</string>
     <string name="delete_exams">Delete exam</string>
     <string name="edit_exams">Edit exam</string>
+    <string name="positive_delete_click">All removed</string>
+    <string name="negative_delete_click">Delete canceled</string>
+    <string name="positive_exam_remove">Exam remove</string>
+    <string name="negative_exam_edit">Edit canceled</string>
+
+    <!-- String dialog -->
+    <string name="show_hint">Show hint?</string>
+    <string name="well_done">Well done!!!</string>
     <string name="edit_dialog">Select a test for editing:</string>
     <string name="delete_exam">You want to delete the exam?</string>
     <string name="edit_exam">To edit the exam?</string>
-    <string name="name">Name</string>
-    <string name="test_name">Test name</string>
-    <string name="button_save">Save</string>
-    <string name="show_hint">Show hint?</string>
-    <string name="well_done">Well done!!!</string>
 
     <!-- The name of the RadioButtons -->
     <string name="radioButton1">RadioButton</string>
@@ -32,6 +39,24 @@
     <string name="buttonNext">Next</string>
     <string name="buttonHint">Hint</string>
     <string name="buttonListExams">List of Exams</string>
+    <string name="button_save">Save</string>
+
+    <!-- String info_exam -->
+    <string name="dateExam">date</string>
+    <string name="infoExam">info</string>
+    <string name="resultExam">result</string>
+
+    <!-- String activity_date_time -->
+    <string name="date_time">Date/Time</string>
+    <string name="button_date_time">Set date &amp; time</string>
+
+    <!-- String resources for the menu -->
+    <string name="add_item">Add</string>
+    <string name="menu_add">Add new exam?</string>
+    <string name="delete_item">Delete</string>
+    <string name="menu_delete">Delete all?</string>
+
+
 
     <!-- The array contains the name of the region -->
     <string name="domain_prompt">Select region</string>
@@ -109,7 +134,7 @@
         <item>2020</item>
     </string-array>
 
-    <!-- The name of the rows in custom_layout -->
+    <!-- String custom_layout -->
     <string name="date">Date</string>
     <string name="city">City</string>
     <string name="name_object">Name object</string>
@@ -120,18 +145,10 @@
     <string name="air_pressure">Air pressure</string>
     <string name="report_number">Report number</string>
 
-    <!-- The name of the rows in info_exam -->
-    <string name="dateExam">date</string>
-    <string name="infoExam">info</string>
-    <string name="resultExam">result</string>
+    <!-- String app fragment -->
+    <string name="first_fragment">First fragment!!!</string>
+    <string name="next_fragment">Next fragment</string>
+    <string name="second_fragment">Second fragment</string>
+    <string name="button_fragment_back">Back</string>
 
-    <!-- The name in activity_date_time -->
-    <string name="date_time">Date/Time</string>
-    <string name="button_date_time">Set date &amp; time</string>
-
-    <!-- String resources for the menu -->
-    <string name="add_item">Add</string>
-    <string name="menu_add">Add new exam?</string>
-    <string name="delete_item">Delete</string>
-    <string name="menu_delete">Delete all?</string>
 </resources>

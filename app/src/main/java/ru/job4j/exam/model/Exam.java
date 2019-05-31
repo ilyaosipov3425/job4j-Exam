@@ -1,4 +1,4 @@
-package ru.job4j.exam;
+package ru.job4j.exam.model;
 
 /**
  * Класс Exam - модель данных описывающих экзамен
@@ -8,6 +8,7 @@ package ru.job4j.exam;
  */
 
 public class Exam {
+
     private int id;
     private String name;
     private long time;

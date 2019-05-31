@@ -24,7 +24,7 @@
         </activity>
         <activity android:name=".HintActivity" />
         <activity android:name=".ResultActivity" />
-        <activity android:name=".HostFragmentsActivity" />
+        <activity android:name=".appFragment.HostFragmentsActivity" />
         <activity
             android:name=".ExamEditActivity"
             android:label="@string/exam_edit_name"/>

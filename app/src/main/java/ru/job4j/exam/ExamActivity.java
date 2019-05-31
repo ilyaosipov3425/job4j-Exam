@@ -1,6 +1,5 @@
 package ru.job4j.exam;
 
-import android.app.Dialog;
 import android.content.Intent;
 import android.support.v4.app.DialogFragment;
 import android.support.v7.app.AppCompatActivity;
@@ -17,6 +16,10 @@ import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 
+import ru.job4j.exam.dialogFragment.ConfirmHintDialogFragment;
+import ru.job4j.exam.model.Option;
+import ru.job4j.exam.model.Question;
+
 /**
  * Класс ExamActivity - Activity
  * @author Ilya Osipov (mailto:il.osipov.ya@yandex.ru)
@@ -24,7 +27,9 @@ import java.util.List;
  * @version $Id$
  */
 
-public class ExamActivity extends AppCompatActivity implements ConfirmHintDialogFragment.ConfirmHintDialogListener {
+public class ExamActivity extends AppCompatActivity
+        implements ConfirmHintDialogFragment.ConfirmHintDialogListener {
+
     public static final String HINT_FOR = "hint for";
     public static final String ANSWER_FOR = "answer for";
     private static final String TAG = "ExamActivity";

@@ -25,6 +25,10 @@ import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
 
+import ru.job4j.exam.dialogFragment.DeleteExamDialogFragment;
+import ru.job4j.exam.dialogFragment.EditExamDialogFragment;
+import ru.job4j.exam.dialogFragment.MenuDeleteDialogFragment;
+import ru.job4j.exam.model.Exam;
 import ru.job4j.exam.store.ExamBaseHelper;
 import ru.job4j.exam.store.ExamDbSchema;
 
@@ -37,6 +41,7 @@ import ru.job4j.exam.store.ExamDbSchema;
 
 public class ExamsActivity extends AppCompatActivity implements MenuDeleteDialogFragment.MenuDeleteDialogListener,
         DeleteExamDialogFragment.DeleteExamDialogListener, EditExamDialogFragment.EditExamDialogListener {
+
     private RecyclerView recycler;
     private SQLiteDatabase store;
     private List<Exam> exams = new ArrayList<>();
@@ -45,36 +50,31 @@ public class ExamsActivity extends AppCompatActivity implements MenuDeleteDialog
     protected void onCreate(@Nullable Bundle state) {
         super.onCreate(state);
         setContentView(R.layout.exams);
+
         this.recycler = findViewById(R.id.exams);
         this.recycler.setLayoutManager(new LinearLayoutManager(getApplicationContext()));
         this.store = new ExamBaseHelper(this.getApplicationContext()).getWritableDatabase();
+
         updateUI();
     }
 
     public class ExamAdapter extends RecyclerView.Adapter<ExamHolder> {
+
         private final List<Exam> exams;
 
         public ExamAdapter(List<Exam> exams) {
             this.exams = exams;
         }
 
-        /**
-         * Метод загружает внутренний вид RecyclerView (info_exam.xml)
-         */
         public ExamHolder onCreateViewHolder(@NonNull ViewGroup parent, int i) {
             LayoutInflater inflater = LayoutInflater.from(parent.getContext());
             View view = inflater.inflate(R.layout.info_exam, parent, false);
             return new ExamHolder(view);
         }
 
-        /**
-         * Метод загружает данные в наш вид
-         * @param holder - вид
-         * @param i - указатель элемента в списке
-         */
         @Override
-        public void onBindViewHolder(@NonNull ExamHolder holder, int i) {
-            final Exam exam = this.exams.get(i);
+        public void onBindViewHolder(@NonNull ExamHolder holder, int position) {
+            final Exam exam = this.exams.get(position);
             TextView text = holder.view.findViewById(R.id.infoExam);
             text.setText(exam.getName());
 
@@ -88,8 +88,7 @@ public class ExamsActivity extends AppCompatActivity implements MenuDeleteDialog
             text.setOnClickListener(
                     (v) -> {
                         text.getContext().startActivity(new Intent(text.getContext(), ExamActivity.class));
-                        Toast.makeText(
-                                getApplicationContext(), "You select " + exam,
+                        Toast.makeText(getApplicationContext(), "You select " + exam,
                                 Toast.LENGTH_SHORT).show();
                     });
 
@@ -108,16 +107,14 @@ public class ExamsActivity extends AppCompatActivity implements MenuDeleteDialog
                     });
         }
 
-        /**
-         * Метод указывает сколько всего элементов в списке
-         */
         @Override
         public int getItemCount() {
             return this.exams.size();
         }
     }
 
-    public class ExamHolder extends RecyclerView.ViewHolder {
+    private class ExamHolder extends RecyclerView.ViewHolder {
+
         private View view;
         private TextView resultExam;
         private TextView dateExam;
@@ -131,7 +128,6 @@ public class ExamsActivity extends AppCompatActivity implements MenuDeleteDialog
     }
 
     private void updateUI() {
-        //List<Exam> exams = new ArrayList<Exam>();
         Cursor cursor = this.store.query(
                 ExamDbSchema.ExamTable.NAME,
                 null, null, null,
@@ -175,7 +171,6 @@ public class ExamsActivity extends AppCompatActivity implements MenuDeleteDialog
 
     @Override
     public void onPositiveDeleteClick(DialogFragment dialog) {
-        //List<Exam> exams = new ArrayList<>();
         Cursor cursor = this.store.query(
                 ExamDbSchema.ExamTable.NAME,
                 null, null, null,
@@ -188,19 +183,18 @@ public class ExamsActivity extends AppCompatActivity implements MenuDeleteDialog
         store = new ExamBaseHelper(this.getApplicationContext()).getWritableDatabase();
         store.delete(ExamDbSchema.ExamTable.NAME, null, null);
         store.close();
-        Toast.makeText(this, "All removed",
+        Toast.makeText(this, R.string.positive_delete_click,
                 Toast.LENGTH_SHORT).show();
     }
 
     @Override
     public void onNegativeDeleteClick(DialogFragment dialog) {
-        Toast.makeText(this, "Delete canceled",
+        Toast.makeText(this, R.string.negative_delete_click,
                 Toast.LENGTH_SHORT).show();
     }
 
     @Override
     public void onPositiveDeleteExamClick(DialogFragment dialog) {
-        //List<Exam> exams = new ArrayList<>();
         Cursor cursor = this.store.query(
                 ExamDbSchema.ExamTable.NAME,
                 null, null, null,
@@ -212,25 +206,24 @@ public class ExamsActivity extends AppCompatActivity implements MenuDeleteDialog
         store.delete(ExamDbSchema.ExamTable.NAME, "id = ?", null);
         cursor.close();
         store.close();
-        Toast.makeText(this, "Exam removed",
+        Toast.makeText(this, R.string.positive_exam_remove,
                 Toast.LENGTH_SHORT).show();
     }
 
     @Override
     public void onNegativeDeleteExamClick(DialogFragment dialog) {
-        Toast.makeText(this, "Delete canceled",
+        Toast.makeText(this, R.string.negative_delete_click,
                 Toast.LENGTH_SHORT).show();
     }
 
     @Override
     public void onPositiveEditClick(DialogFragment dialog) {
-        // метод редактирования одной заявки
         startActivity(new Intent(this, ExamEditActivity.class));
     }
 
     @Override
     public void onNegativeEditClick(DialogFragment dialog) {
-        Toast.makeText(this, "Edit canceled",
+        Toast.makeText(this, R.string.negative_exam_edit,
                 Toast.LENGTH_SHORT).show();
     }
 }

@@ -1,4 +1,4 @@
-package ru.job4j.exam;
+package ru.job4j.exam.model;
 
 import android.annotation.TargetApi;
 import android.os.Build;
@@ -6,13 +6,14 @@ import android.os.Build;
 import java.util.Objects;
 
 /**
- * Класс Option - вариант ответов
+ * Класс Option - модель варианта ответа
  * @author Ilya Osipov (mailto:il.osipov.ya@yandex.ru)
  * @since 28.03.2019
  * @version $Id$
  */
 
 public class Option {
+
     private int id;
     private String text;
 

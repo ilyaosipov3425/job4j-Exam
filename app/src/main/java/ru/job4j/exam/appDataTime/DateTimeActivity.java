@@ -25,6 +25,7 @@ import ru.job4j.exam.R;
 
 public class DateTimeActivity extends AppCompatActivity implements DatePickerDialog.OnDateSetListener,
         TimePickerDialog.OnTimeSetListener {
+
     private Button button;
     private TextView currentDateTime;
     private Calendar calendar = Calendar.getInstance();

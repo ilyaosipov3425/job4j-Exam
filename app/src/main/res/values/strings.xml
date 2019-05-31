@@ -8,17 +8,24 @@
     <string name="answer">Результат</string>
     <string name="exam_update_name">Создание экзамена</string>
     <string name="exam_edit_name">Редактирование экзамена</string>
+    <string name="name">Имя</string>
+    <string name="test_name">Имя теста</string>
+
+    <!-- Строки toast -->
     <string name="add_exam">Добавить экзамен</string>
     <string name="delete_exams">Удалить экзамены</string>
     <string name="edit_exams">Редактировать экзамен</string>
+    <string name="positive_delete_click">Все удалены</string>
+    <string name="negative_delete_click">Отмена удаления</string>
+    <string name="positive_exam_remove">Экзамен удален</string>
+    <string name="negative_exam_edit">Отмена редактирования</string>
+
+    <!-- Строки диалогов -->
+    <string name="show_hint">Показать подсказку?</string>
+    <string name="well_done">Молодец!!!</string>
     <string name="edit_dialog">Выберите экзамен для редактирования:</string>
     <string name="delete_exam">Вы хотите удалить экзамен?</string>
     <string name="edit_exam">Отредактировать экзамен?</string>
-    <string name="name">Имя</string>
-    <string name="test_name">Имя теста</string>
-    <string name="button_save">Сохранить</string>
-    <string name="show_hint">Показать подсказку?</string>
-    <string name="well_done">Молодец!!!</string>
 
     <!-- Название переключателей -->
     <string name="radioButton1">Переключатель</string>
@@ -31,6 +38,24 @@
     <string name="buttonNext">Далее</string>
     <string name="buttonHint">Подсказка</string>
     <string name="buttonListExams">Список экзаменов</string>
+    <string name="button_save">Сохранить</string>
+
+    <!-- Название строк в info_exam -->
+    <string name="dateExam">дата</string>
+    <string name="infoExam">информация</string>
+    <string name="resultExam">результат</string>
+
+    <!-- Название в activity_date_time -->
+    <string name="date_time">Дата/Время</string>
+    <string name="button_date_time">Установить дату и время</string>
+
+    <!-- Строковые ресурсы для меню -->
+    <string name="add_item">Добавить</string>
+    <string name="menu_add">Добавить новый экзамен?</string>
+    <string name="delete_item">Удалить</string>
+    <string name="menu_delete">Удалить всё?</string>
+
+
 
     <!-- Массив содежит название областей -->
     <string name="domain_prompt">Выберите область</string>
@@ -119,18 +144,10 @@
     <string name="air_pressure">Атмосферное давление</string>
     <string name="report_number">Номер отчёта</string>
 
-    <!-- Название строк в info_exam -->
-    <string name="dateExam">дата</string>
-    <string name="infoExam">информация</string>
-    <string name="resultExam">результат</string>
+    <!-- Сроки приложения фрагменты -->
+    <string name="first_fragment">Первый фрагмент!!!</string>
+    <string name="next_fragment">Следующий фрагмент</string>
+    <string name="second_fragment">Второй фргмент</string>
+    <string name="button_fragment_back">Назад</string>
 
-    <!-- Название в activity_date_time -->
-    <string name="date_time">Дата/Время</string>
-    <string name="button_date_time">Установить дату и время</string>
-
-    <!-- Строковые ресурсы для меню -->
-    <string name="add_item">Добавить</string>
-    <string name="menu_add">Добавить новый экзамен?</string>
-    <string name="delete_item">Удалить</string>
-    <string name="menu_delete">Удалить всё?</string>
 </resources>
