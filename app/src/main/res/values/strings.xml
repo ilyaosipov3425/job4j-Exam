@@ -17,6 +17,7 @@
     <string name="edit_exams">Редактировать экзамен</string>
     <string name="positive_delete_click">Все удалены</string>
     <string name="negative_delete_click">Отмена удаления</string>
+    <string name="positive_edit_click">Экзамен отредактирован</string>
     <string name="positive_exam_remove">Экзамен удален</string>
     <string name="negative_exam_edit">Отмена редактирования</string>
 

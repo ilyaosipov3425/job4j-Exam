@@ -45,6 +45,7 @@ public class ExamsActivity extends AppCompatActivity implements MenuDeleteDialog
     private RecyclerView recycler;
     private SQLiteDatabase store;
     private List<Exam> exams = new ArrayList<>();
+    private static final String KEY_POSITION = "position";
 
     @Override
     protected void onCreate(@Nullable Bundle state) {
@@ -95,14 +96,22 @@ public class ExamsActivity extends AppCompatActivity implements MenuDeleteDialog
             ImageButton deleteButton = holder.view.findViewById(R.id.delete_exam);
             deleteButton.setOnClickListener(
                     (v) -> {
+                        Bundle bundle = new Bundle();
+                        bundle.putInt(KEY_POSITION, holder.getAdapterPosition());
+
                         DialogFragment dialogDelete = new DeleteExamDialogFragment();
+                        dialogDelete.setArguments(bundle);
                         dialogDelete.show(getSupportFragmentManager(), "delete_exam");
                     });
 
             ImageButton editButton = holder.view.findViewById(R.id.edit_exam);
             editButton.setOnClickListener(
                     (v) -> {
+                        Bundle bundle = new Bundle();
+                        bundle.putInt(KEY_POSITION, holder.getAdapterPosition());
+
                         DialogFragment dialogEdit = new EditExamDialogFragment();
+                        dialogEdit.setArguments(bundle);
                         dialogEdit.show(getSupportFragmentManager(), "edit_exam");
                     });
         }
@@ -194,18 +203,19 @@ public class ExamsActivity extends AppCompatActivity implements MenuDeleteDialog
     }
 
     @Override
-    public void onPositiveDeleteExamClick(DialogFragment dialog) {
+    public void onPositiveDeleteExamClick(DialogFragment dialog, int position) {
         Cursor cursor = this.store.query(
                 ExamDbSchema.ExamTable.NAME,
                 null, null, null,
                 null, null, null
         );
-        cursor.moveToFirst();
+        cursor.moveToPosition(position);
+        exams.remove(position);
         this.recycler.setAdapter(new ExamAdapter(exams));
-        store = new ExamBaseHelper(this.getApplicationContext()).getWritableDatabase();
-        store.delete(ExamDbSchema.ExamTable.NAME, "id = ?", null);
         cursor.close();
-        store.close();
+        store = new ExamBaseHelper(this.getApplicationContext()).getWritableDatabase();
+        store.delete(ExamDbSchema.ExamTable.NAME, "id = " + position, null);
+        //store.close();
         Toast.makeText(this, R.string.positive_exam_remove,
                 Toast.LENGTH_SHORT).show();
     }
@@ -217,8 +227,10 @@ public class ExamsActivity extends AppCompatActivity implements MenuDeleteDialog
     }
 
     @Override
-    public void onPositiveEditClick(DialogFragment dialog) {
-        startActivity(new Intent(this, ExamEditActivity.class));
+    public void onPositiveEditClick(DialogFragment dialog, int position) {
+        Intent intent = new Intent(this, ExamEditActivity.class);
+        intent.putExtra(KEY_POSITION, position);
+        startActivity(intent);
     }
 
     @Override

@@ -29,7 +29,9 @@ public class ExamEditActivity extends AppCompatActivity {
     protected void onCreate(@Nullable Bundle state) {
         super.onCreate(state);
         setContentView(R.layout.exam_update);
+
         this.store = new ExamBaseHelper(this.getApplicationContext()).getWritableDatabase();
+        int position = getIntent().getIntExtra("position", 0);
         EditText edit = findViewById(R.id.title);
         Button save = findViewById(R.id.save);
         save.setOnClickListener(
@@ -42,12 +44,13 @@ public class ExamEditActivity extends AppCompatActivity {
                             null, null, null
                     );
                     cursor.moveToFirst();
-                    cursor.moveToNext();
+                    cursor.moveToPosition(position);
                     String title = cursor.getString(cursor.getColumnIndex("title"));
-                    store.update(ExamDbSchema.ExamTable.NAME, values, "TITLE = ?", new String[] {title});
+                    store.update(ExamDbSchema.ExamTable.NAME, values, "TITLE = ?",
+                            new String[] {title});
                     cursor.close();
                     startActivity(new Intent(ExamEditActivity.this, ExamsActivity.class));
-                    Toast.makeText(this, "Edit exam",
+                    Toast.makeText(this, R.string.positive_edit_click,
                             Toast.LENGTH_SHORT).show();
                 });
     }

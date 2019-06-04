@@ -20,15 +20,22 @@ import ru.job4j.exam.R;
 public class EditExamDialogFragment extends DialogFragment {
 
     private EditExamDialogListener callback;
+    private int position = 0;
 
     @NonNull
     @Override
     public Dialog onCreateDialog(@Nullable Bundle savedInstanceState) {
+
+        Bundle bundle = getArguments();
+        if (bundle != null) {
+            position = bundle.getInt("position");
+        }
+
         Dialog dialog = new AlertDialog.Builder(getActivity())
                 .setMessage(R.string.edit_exam)
                 .setPositiveButton(android.R.string.ok,
                         (dialogInterface, i) -> callback
-                                .onPositiveEditClick(EditExamDialogFragment.this))
+                                .onPositiveEditClick(EditExamDialogFragment.this, position))
                 .setNegativeButton(android.R.string.cancel,
                         (dialogInterface, i) -> callback
                                 .onNegativeEditClick(EditExamDialogFragment.this))
@@ -37,7 +44,7 @@ public class EditExamDialogFragment extends DialogFragment {
     }
 
     public interface EditExamDialogListener {
-        void onPositiveEditClick(DialogFragment dialog);
+        void onPositiveEditClick(DialogFragment dialog, int position);
         void onNegativeEditClick(DialogFragment dialog);
     }
 

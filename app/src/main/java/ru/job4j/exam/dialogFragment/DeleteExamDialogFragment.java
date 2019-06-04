@@ -20,15 +20,22 @@ import ru.job4j.exam.R;
 public class DeleteExamDialogFragment extends DialogFragment {
 
     private DeleteExamDialogListener callback;
+    private int position = 0;
 
     @NonNull
     @Override
     public Dialog onCreateDialog(@Nullable Bundle savedInstanceState) {
+
+        Bundle bundle = getArguments();
+        if (bundle != null) {
+            position = bundle.getInt("position");
+        }
+
         Dialog dialog = new AlertDialog.Builder(getActivity())
                 .setMessage(R.string.delete_exam)
                 .setPositiveButton(android.R.string.ok,
                         (dialogInterface, i) -> callback
-                                .onPositiveDeleteExamClick(this))
+                                .onPositiveDeleteExamClick(this, position))
                 .setNegativeButton(android.R.string.cancel,
                         (dialogInterface, i) -> callback
                                 .onNegativeDeleteExamClick(this))
@@ -37,7 +44,7 @@ public class DeleteExamDialogFragment extends DialogFragment {
     }
 
     public interface DeleteExamDialogListener {
-        void onPositiveDeleteExamClick(DialogFragment dialog);
+        void onPositiveDeleteExamClick(DialogFragment dialog, int position);
         void onNegativeDeleteExamClick(DialogFragment dialog);
     }
 

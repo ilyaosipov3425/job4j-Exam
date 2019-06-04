@@ -18,6 +18,7 @@
     <string name="edit_exams">Edit exam</string>
     <string name="positive_delete_click">All removed</string>
     <string name="negative_delete_click">Delete canceled</string>
+    <string name="positive_edit_click">Edit exam</string>
     <string name="positive_exam_remove">Exam remove</string>
     <string name="negative_exam_edit">Edit canceled</string>
 

@@ -4,7 +4,8 @@
     android:orientation="vertical"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:gravity="center">
+    android:gravity="center"
+    android:padding="16dp">
 
     <TextView
         android:id="@+id/question"
@@ -89,5 +90,12 @@
             android:textSize="12sp"/>
 
     </LinearLayout>
+
+    <Button
+        android:id="@+id/list_exams"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/buttonListExams"
+        android:textSize="12sp"/>
 
 </LinearLayout>
